@@ -1,3 +1,8 @@
+/*
+	This program is my first program.I code this program with all of my skill.
+	Code my first program is very fun.I commented on this for the future that I was a great programmer.
+	I will not forget the beginning of this trip.
+*/
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
@@ -5,7 +10,9 @@
 #define textcolor(txt,back) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), back*16+txt)
 #define resetcolor() SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15)
  
-float square(float side){
+ // This is function that calculate a side of square
+float square(float side)
+{
 	float area; 
 	textcolor(9,0);printf("You choose square!\n");textcolor(15,0);
 	printf("The operation of square is");
@@ -16,7 +23,10 @@ float square(float side){
 	area=side*side;
 	return area; 
 }
-float rectangle(float width, float length){
+
+ // This is function that calculate a side of retangle
+float rectangle(float width, float length)
+{
 	float area; 
 	textcolor(9,0);printf("You choose retangle!\n");textcolor(15,0);
 	printf("The operation of rectangle is");
@@ -30,7 +40,10 @@ float rectangle(float width, float length){
 	area=width*length;textcolor(6,0);
 	return area; 
 }
-float triangle(float height,float base){
+
+ // This is function that calculate a side of triangle
+float triangle(float height,float base)
+{
 	float area; 
 	textcolor(9,0);printf("You choose triangle!\n");textcolor(15,0);
 	printf("The operation of triangle is");
@@ -44,7 +57,10 @@ float triangle(float height,float base){
 	area=0.5*(height*base);textcolor(6,0);
 	return area; 
 }
-float circle(float radient){
+
+ // This is function that calculate a side of circle
+float circle(float radient)
+{
 	float area; 
 	textcolor(9,0);printf("You choose circle!\n");textcolor(15,0);
 	printf("The operation of circle is");
@@ -55,7 +71,10 @@ float circle(float radient){
 	area=3.14*(radient*radient); textcolor(6,0);
 	return area; 
 }
-float cube(float width,float height,float length){
+
+ // This is function that calculate a side of cube
+float cube(float width,float height,float length)
+{
 	float area; 
 	textcolor(9,0);printf("You choose cube!\n");textcolor(15,0);
 		printf("The operation of cube is");
@@ -72,6 +91,9 @@ float cube(float width,float height,float length){
 	area=height*(width*length);textcolor(6,0);
 	return area; 
 }
+
+
+
 int main(){
 	int shape; 
 	int side; 
@@ -87,8 +109,11 @@ int main(){
 	printf("\nInput 1:Retangle \nInput 2:triangle \nInput 3:circle\nInput 4:3D Shape\n");textcolor(15,0);
 	printf("Input is :");textcolor(8,0);
 	scanf("%d",&shape);textcolor(15,0);
+	
 	switch (shape) 
 	{
+		
+			//In case 1 rettacgle has 2 case inside
 		case 1:
 			int rec;
 			printf("\nYou input 1 : retangle");
@@ -98,13 +123,16 @@ int main(){
 			scanf("%d",&rec);textcolor(15,0);
 			switch(rec)
 			{
+				// This case will use square function above
 				case 1:
 					printf("\nArea of your square is %.2f !",square(side));textcolor(15,0);
 					textcolor(10,0);
 					printf("\n============== Process success! ==============");textcolor(15,0);
 					break;
+					
+				// This case will use rectangle function above
 				case 2:
-					printf("\nArea of your square is %.2f !",rectangle(width,height));textcolor(15,0);
+					printf("\nArea of your rectandle is %.2f !",rectangle(width,height));textcolor(15,0);
 					textcolor(10,0);
 					printf("\n============== Process success! ==============");textcolor(15,0);
 					break;
@@ -117,17 +145,29 @@ int main(){
 					break;
 			}
 			break;
+			
+			// This case will use triangle function above	
 		case 2:
+			{
 			printf("\nArea of your triangle is %.2f !",triangle(height, base));textcolor(15,0);
 			textcolor(10,0);
 			printf("\n============== Process success! ==============");textcolor(15,0);
-		break;
+			break;
+			}
+			
+			// This case will use circle function above
 		case 3:
+			{
 			printf("\nArea of your circle is %.2f !",circle(radient));textcolor(15,0);
 			textcolor(10,0);
 			printf("\n============== Process success! ==============");textcolor(15,0);
-		break;
+			break;
+			}
+			
+			
+			//In case 1 rettacgle has 1 case inside (Will be added in future)
 		case 4:
+			{
 			int td;
 			printf("\nYou input 4 : 3D Shape !");
 			textcolor(9,0);
@@ -139,11 +179,15 @@ int main(){
 			scanf("%d",&td);textcolor(15,0);
 			switch(td)
 			{
+					
+					// This case will use circle function above
 				case 1:
+					{
 					printf("\nArea of your square is %.2f !",cube(width, height,length));textcolor(15,0);
 					textcolor(10,0);
 					printf("\n============== Process success! ==============");textcolor(15,0);
-				break;
+					break;
+					}
 				default :
 					textcolor(4,0);
 					printf("Error! Please try again");
@@ -152,16 +196,16 @@ int main(){
 					printf("====================");textcolor(15,0);
 				break;
 			}
-		break;
-			
+			break;
+			}
 		default :
 			textcolor(4,0);
 			printf("Error! Please try again");
 			printf("\n====================");
 			printf(" Access denied! ");
 			printf("====================");textcolor(15,0);
-		break;
-	} 
+			break;
+		} 
 	
 	getch();
 }
