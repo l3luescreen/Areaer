@@ -11,7 +11,7 @@
 #define resetcolor() SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15)
  
  // This is function that calculate a side of square
-float square(float side)
+void square(float side)
 {
 	float area; 
 	textcolor(9,0);printf("You choose square!\n");textcolor(15,0);
@@ -21,11 +21,12 @@ float square(float side)
 	textcolor(13,0);scanf("%f",&side);//get variable (side)
 	
 	area=side*side;textcolor(6,0);//calculate area of square use [side]
-	return area; 
+	printf("\nArea of your square is %.2f !",area);textcolor(15,0);
+	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
 }
 
  // This is function that calculate a side of retangle
-float rectangle(float width, float length)
+void rectangle(float width, float length)
 {
 	float area; 
 	textcolor(9,0);printf("You choose retangle!\n");textcolor(15,0);
@@ -37,11 +38,12 @@ float rectangle(float width, float length)
 	textcolor(13,0);scanf("%f",&length); //get variable (length)
 	
 	area=width*length;textcolor(6,0); //calculate area of rectangle use [side],[width]
-	return area;  
+	printf("\nArea of your rectangle is %.2f !",area);textcolor(15,0);
+	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0); 
 }
 
 
-float rhombus(float diagonal1,float diagonal2)
+void rhombus(float diagonal1,float diagonal2)
 {
 	float area;
 	textcolor(9,0);printf("You choose rhombus!\n");textcolor(15,0);
@@ -53,11 +55,12 @@ float rhombus(float diagonal1,float diagonal2)
 	textcolor(13,0);scanf("%f",&diagonal2);//get variable (diagonal2)
 	
 	area=0.5*(diagonal1*diagonal2);textcolor(6,0);//calculate area of rhombus use [diagonal1],[diagonal2]
-	return area;
+	printf("\nArea of your rhombus is %.2f !",area);textcolor(15,0);
+	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
 }
 
  // This is function that calculate a side of triangle
-float triangle(float height,float base)
+void triangle(float height,float base)
 {
 	float area; 
 	textcolor(9,0);printf("You choose triangle!\n");textcolor(15,0);
@@ -69,11 +72,12 @@ float triangle(float height,float base)
 	textcolor(13,0);scanf("%f",&height);//get variable (height)
 
 	area=0.5*(height*base);textcolor(6,0);//calculate area of triangle use [base],[height]
-	return area; 
+	printf("\nArea of your triangle is %.2f !",area);textcolor(15,0);
+	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
 }
 
  // This is function that calculate a side of circle
-float circle(float radient)
+void circle(float radient)
 {
 	float area; 
 	textcolor(9,0);printf("You choose circle!\n");textcolor(15,0);
@@ -83,11 +87,12 @@ float circle(float radient)
 	textcolor(13,0);scanf("%f",&radient);//get variable (radient)
 	
 	area=3.14*(radient*radient); textcolor(6,0);//calculate area of triangle use [radient]
-	return area; 
+	printf("\nArea of your circle is %.2f !",area);textcolor(15,0);
+	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
 }
 
  // This is function that calculate a side of cube
-float cube(float width,float height,float length)
+void cube(float width,float height,float length)
 {
 	float area; 
 	textcolor(9,0);printf("You choose cube!\n");textcolor(15,0);
@@ -101,7 +106,8 @@ float cube(float width,float height,float length)
 	textcolor(13,0);scanf("%f",&height);textcolor(15,0);//get variable (height)
 	
 	area=height*(width*length);textcolor(6,0);//calculate area of triangle use [width],[length],[height]
-	return area; 
+	printf("\nArea of your Cube is %.2f !",area);textcolor(15,0);
+	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
 }
 
 
@@ -156,56 +162,41 @@ int main(){
 			{
 				// This case will use square function above
 				case 1:
-					printf("\nArea of your square is %.2f !",square(side));textcolor(15,0);
-					textcolor(10,0);
-					printf("\n============== Process success! ==============");textcolor(15,0);
+					square(side);
 					break;
 					
 				// This case will use rectangle function above
 				case 2:
-					printf("\nArea of your rectandle is %.2f !",rectangle(width,height));textcolor(15,0);
-					textcolor(10,0);
-					printf("\n============== Process success! ==============");textcolor(15,0);
+					rectangle(width,height);
 					break;
 				// This case will use rhombus function above
 				case 3:
-					printf("\nArea of your rhombus is %.2f !",rhombus(diagonal1,diagonal2));textcolor(15,0);
-					textcolor(10,0);
-					printf("\n============== Process success! ==============");textcolor(15,0);
+					rhombus(diagonal1,diagonal2);
 					break;
 				default :
 					textcolor(4,0);
 					printf("Error! Please try again");
-					printf("\n====================");
-					printf(" Access denied! ");
-					printf("====================");textcolor(15,0);
+					printf("\n====================Access denied!====================");textcolor(15,0);
 					break;
 			}
 			break;
-			
 			// This case will use triangle function above	
 		case 2:
 			{
-			printf("\nArea of your triangle is %.2f !",triangle(height, base));textcolor(15,0);
-			textcolor(10,0);
-			printf("\n============== Process success! ==============");textcolor(15,0);
+			triangle(height, base);
 			break;
 			}
-			
 			// This case will use circle function above
 		case 3:
 			{
-			printf("\nArea of your circle is %.2f !",circle(radient));textcolor(15,0);
-			textcolor(10,0);
-			printf("\n============== Process success! ==============");textcolor(15,0);
+			circle(radient);
 			break;
 			}
 			
 			
 			//In case 1 rettacgle has 1 case inside (Will be added in future)
 		case 4:
-			{
-				
+			{	
 				/*
 			base on number you input in (td)
 				1 for cube
@@ -225,17 +216,13 @@ int main(){
 					// This case will use circle function above
 				case 1:
 					{
-					printf("\nArea of your square is %.2f !",cube(width, height,length));textcolor(15,0);
-					textcolor(10,0);
-					printf("\n============== Process success! ==============");textcolor(15,0);
+					cube(width, height,length);
 					break;
 					}
 				default :
 					textcolor(4,0);
 					printf("Error! Please try again");
-					printf("\n====================");
-					printf(" Access denied! ");
-					printf("====================");textcolor(15,0);
+					printf("\n====================Access denied!====================");textcolor(15,0);
 				break;
 			}
 			break;
@@ -243,9 +230,7 @@ int main(){
 		default :
 			textcolor(4,0);
 			printf("Error! Please try again");
-			printf("\n====================");
-			printf(" Access denied! ");
-			printf("====================");textcolor(15,0);
+			printf("\n====================Access denied!====================");textcolor(15,0);
 			break;
 		} 
 	
