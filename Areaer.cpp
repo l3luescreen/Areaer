@@ -122,7 +122,10 @@ int main(){
 	int diagonal1;
 	int diagonal2;
 	float radient;
+	char again;
 
+	do{
+	
 	
 	textcolor(10,0);
 	printf("==========Hello! welcome to Areaer!==========\n");textcolor(15,0);
@@ -233,6 +236,19 @@ int main(){
 			printf("\n====================Access denied!====================");textcolor(15,0);
 			break;
 		} 
-	
-	getch();
+		
+		
+		
+		textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input Y :Do it again");
+		textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input N :Close the program\n\n");
+		textcolor(14,0);printf("Do you want to do it again ? :");textcolor(8,0);
+		again = getch();textcolor(15,0);
+		printf("\n\n");
+		
+		
+		
+	}while(again !='n');
+		
+	printf("Areaer's out.\n");
+	printf("Good Bye!");
 }
