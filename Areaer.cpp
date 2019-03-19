@@ -86,7 +86,7 @@ void circle(float radient)
 	printf("Please input radient of circle :");
 	textcolor(13,0);scanf("%f",&radient);//get variable (radient)
 	
-	area=3.14*(radient*radient); textcolor(6,0);//calculate area of triangle use [radient]
+	area=3.14*(radient*radient); textcolor(6,0);//calculate area of circle use [radient]
 	printf("\nArea of your circle is %.2f !",area);textcolor(15,0);
 	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
 }
@@ -107,6 +107,21 @@ void cube(float width,float height,float length)
 	
 	area=height*(width*length);textcolor(6,0);//calculate area of triangle use [width],[length],[height]
 	printf("\nArea of your Cube is %.2f !",area);textcolor(15,0);
+	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
+}
+
+  // This is function that calculate a volume of Ball
+void Ball(float radient)
+{
+	float area;
+	textcolor(9,0);printf("You choose Ball!\n");textcolor(15,0);
+	printf("The operation of Ball is");
+	textcolor(3,0);printf("[Area =((radient*radient*radient)*3.14*4/3)]\n\n");textcolor(15,0);
+	printf("Please input radient of Ball :");
+	textcolor(13,0);scanf("%f",&radient);//get variable (radient)
+	
+	area=3.14*4/3*(radient*radient*radient); textcolor(6,0);//calculate area of Ball use [radient]
+	printf("\nArea of your Ball is %.2f !",area);textcolor(15,0);
 	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
 }
 
@@ -210,6 +225,7 @@ int main(){
 			printf("[In this function \'area\' has changed to \'Volume\']");textcolor(15,0);
 			textcolor(14,0);
 			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 1 to Cube \n");
+			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 2 to Ball \n");
 			textcolor(15,0);
 			printf("\nInput is : ");textcolor(8,0);
 			scanf("%d",&td);textcolor(15,0);
@@ -220,6 +236,11 @@ int main(){
 				case 1:
 					{
 					cube(width, height,length);
+					break;
+					}
+				case 2:
+					{
+					Ball(radient);
 					break;
 					}
 				default :
@@ -247,8 +268,11 @@ int main(){
 		
 		
 		
+		
+		
 	}while(again !='n');
 		
-	printf("Areaer's out.\n");
-	printf("Good Bye!");
+	printf("Areaer's out...\n");
+	printf("Good Bye!\n\n\n");
+	main();
 }
