@@ -232,7 +232,12 @@ int main(){
 			switch(td)
 			{
 					
-					// This case will use circle function above
+			
+			/*
+			base on number you input in (3D)
+				1 for Cube
+				2 for Ball
+			*/
 				case 1:
 					{
 					cube(width, height,length);
