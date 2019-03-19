@@ -139,7 +139,7 @@ int main(){
 	float radient;
 	char again;
 
-	do{
+
 	
 	
 	textcolor(10,0);
@@ -270,9 +270,10 @@ int main(){
 		
 		
 		
-	}while(again !='n');
-		
-	printf("Areaer's out...\n");
-	printf("Good Bye!\n\n\n");
-	main();
+		if(again=='y'){
+			main();
+		}else{
+			printf("Areaer's out...\n");
+			printf("Good Bye!\n\n");
+		}
 }
