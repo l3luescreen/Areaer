@@ -59,7 +59,23 @@ void rhombus(float diagonal1,float diagonal2)
 	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
 }
 
- 
+ void kite(float diagonal1,float diagonal2)
+ {
+ 	float area;
+	textcolor(9,0);printf("You choose kite!\n");textcolor(15,0);
+	printf("The operation of kite is");
+	textcolor(3,0);printf("[Area = (0.5* multiplied result of the diagonal<<<[diagonal1*diagonal2]) [Same as rhombus!!!] \n\n");textcolor(15,0);
+	printf("Please input diagonal1 :");		
+	textcolor(13,0);scanf("%f",&diagonal1);textcolor(15,0);//get variable (diagonal1)
+	printf("Please input diagonal2 :");
+	textcolor(13,0);scanf("%f",&diagonal2);//get variable (diagonal2)
+	
+	area=0.5*(diagonal1*diagonal2);textcolor(6,0);//calculate area of kite use [diagonal1],[diagonal2]
+	printf("\nArea of your kite is %.2f !",area);textcolor(15,0);
+	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
+ }
+
+ // This is function that calculate a side of trapezoid
  void trapezoid(float height, float FirstPar, float SecPar)
  {
  	float area;
@@ -194,8 +210,9 @@ int main(){
 			textcolor(14,0);
 			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 1 :square");
 			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 2 :retangle");
-			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 3 :rhombus ");
-			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 4 :trapezoid");
+			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 3 :trapezoid ");
+			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 4 :rhombus");
+			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 5 :kite");
 			textcolor(15,0);
 			printf("\n\nInput is : ");textcolor(8,0);
 			scanf("%d",&rec);textcolor(15,0);
@@ -212,10 +229,13 @@ int main(){
 					break;
 				// This case will use rhombus function above
 				case 3:
-					rhombus(diagonal1,diagonal2);
+					trapezoid(height,FirstPar,SecPar);
 					break;
 				case 4:
-					trapezoid(height,FirstPar,SecPar);
+					rhombus(diagonal1,diagonal2);
+					break;
+				case 5:
+					kite(diagonal1,diagonal2);
 					break;
 				default :
 					textcolor(4,0);
