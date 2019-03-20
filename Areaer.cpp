@@ -59,6 +59,25 @@ void rhombus(float diagonal1,float diagonal2)
 	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
 }
 
+ 
+ void trapezoid(float height, float FirstPar, float SecPar)
+ {
+ 	float area;
+	textcolor(9,0);printf("You choose trapezoid!\n");textcolor(15,0);
+	printf("The operation of trapezoid is");
+	textcolor(3,0);printf("[Area = (0.5* height*The sum of the parallel sides)\n\n");textcolor(15,0);
+	printf("Please input hight :");		
+	textcolor(13,0);scanf("%f",&height);textcolor(15,0);//get variable (height)
+	printf("Please input the first parallel side :");		
+	textcolor(13,0);scanf("%f",&FirstPar);textcolor(15,0);//get variable (the first parallel side)
+	printf("Please input the second parallel side :");
+	textcolor(13,0);scanf("%f",&SecPar);//get variable (the second parallel side)
+	
+	area=0.5* height*(FirstPar+SecPar);textcolor(6,0);//calculate area of trapezoid use [the first parallel side],[the second parallel side]
+	printf("\nArea of your trapezoid is %.2f !",area);textcolor(15,0);
+	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
+ }
+ 
  // This is function that calculate a side of triangle
 void triangle(float height,float base)
 {
@@ -129,14 +148,17 @@ void Ball(float radient)
 
 int main(){
 	int shape; 
-	int side; 
-	int height;
-	int base;
-	int width;
-	int length;
-	int diagonal1;
-	int diagonal2;
+	float side; 
+	float height;
+	float base;
+	float width;
+	float length;
+	float diagonal1;
+	float diagonal2;
+	float FirstPar;
+	float SecPar;
 	float radient;
+	float sumPS;
 	char again;
 
 
@@ -172,9 +194,10 @@ int main(){
 			textcolor(14,0);
 			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 1 :square");
 			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 2 :retangle");
-			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 3 :rhombus \n");
+			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 3 :rhombus ");
+			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 4 :trapezoid");
 			textcolor(15,0);
-			printf("\nInput is : ");textcolor(8,0);
+			printf("\n\nInput is : ");textcolor(8,0);
 			scanf("%d",&rec);textcolor(15,0);
 			switch(rec)
 			{
@@ -190,6 +213,9 @@ int main(){
 				// This case will use rhombus function above
 				case 3:
 					rhombus(diagonal1,diagonal2);
+					break;
+				case 4:
+					trapezoid(height,FirstPar,SecPar);
 					break;
 				default :
 					textcolor(4,0);
