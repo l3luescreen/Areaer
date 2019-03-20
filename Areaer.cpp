@@ -129,7 +129,7 @@ void circle(float radient)
  // This is function that calculate a side of cube
 void cube(float width,float height,float length)
 {
-	float area; 
+	float volume; 
 	textcolor(9,0);printf("You choose cube!\n");textcolor(15,0);
 	printf("The operation of cube is");
 	textcolor(3,0);printf("[Volume = height*(width*length)]\n\n");textcolor(15,0);
@@ -140,27 +140,41 @@ void cube(float width,float height,float length)
 	printf("Please input height of Cube :");
 	textcolor(13,0);scanf("%f",&height);textcolor(15,0);//get variable (height)
 	
-	area=height*(width*length);textcolor(6,0);//calculate area of triangle use [width],[length],[height]
-	printf("\nArea of your Cube is %.2f !",area);textcolor(15,0);
+	volume=height*(width*length);textcolor(6,0);//calculate volume of triangle use [width],[length],[height]
+	printf("\nVolume of your Cube is %.2f !",volume);textcolor(15,0);
 	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
 }
 
   // This is function that calculate a volume of Ball
 void Ball(float radient)
 {
-	float area;
+	float volume;
 	textcolor(9,0);printf("You choose Ball!\n");textcolor(15,0);
 	printf("The operation of Ball is");
-	textcolor(3,0);printf("[Area =((radient*radient*radient)*3.14*4/3)]\n\n");textcolor(15,0);
+	textcolor(3,0);printf("[Volume =((radient*radient*radient)*3.14*4/3)]\n\n");textcolor(15,0);
 	printf("Please input radient of Ball :");
 	textcolor(13,0);scanf("%f",&radient);//get variable (radient)
 	
-	area=3.14*4/3*(radient*radient*radient); textcolor(6,0);//calculate area of Ball use [radient]
-	printf("\nArea of your Ball is %.2f !",area);textcolor(15,0);
+	volume=3.14*4/3*(radient*radient*radient); textcolor(6,0);//calculate volume of Ball use [radient]
+	printf("\nVolume of your Ball is %.2f !",volume);textcolor(15,0);
 	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
 }
 
-
+void cylinder(float radient, float height)
+{
+	float volume;
+	textcolor(9,0);printf("You choose cylinder!\n");textcolor(15,0);
+	printf("The operation of cylinder is :");
+	textcolor(3,0);printf("[Volume = 3.14*(radient*radient)*height]\n\n");textcolor(15,0);
+	printf("Please input radient of cylinder :");
+	textcolor(13,0);scanf("%f",&radient);textcolor(15,0);//get variable (radient)
+	printf("Please input height of cylinder :");
+	textcolor(13,0);scanf("%f",&height);textcolor(15,0);//get variable (height)
+	
+	volume = 3.14*(radient*radient)*height;textcolor(6,0);
+	printf("\nVolume of your cylinder is %.2f !",volume);//calculate volume of Ball use [radient],[height]
+	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
+}
 
 int main(){
 	int shape; 
@@ -272,6 +286,7 @@ int main(){
 			textcolor(14,0);
 			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 1 to Cube \n");
 			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 2 to Ball \n");
+			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 3 to Cylinder \n");
 			textcolor(15,0);
 			printf("\nInput is : ");textcolor(8,0);
 			scanf("%d",&td);textcolor(15,0);
@@ -283,6 +298,7 @@ int main(){
 			base on number you input in (3D)
 				1 for Cube
 				2 for Ball
+				3 for Cylinder
 			*/
 				case 1:
 					{
@@ -292,6 +308,11 @@ int main(){
 				case 2:
 					{
 					Ball(radient);
+					break;
+					}
+				case 3:
+					{
+					cylinder(radient,height);
 					break;
 					}
 				default :
