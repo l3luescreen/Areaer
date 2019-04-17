@@ -176,6 +176,20 @@ void cylinder(float radient, float height)
 	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
 }
 
+	//This is function that calculate a area of Polygon
+void polygon(float side)
+{
+	float area;
+	textcolor(9,0);printf("You choose Polygon!\n");textcolor(15,0);
+	printf("The operation of Polygon is :");
+	textcolor(3,0);printf("[Area = 1.72*(side*side)]\n\n");textcolor(15,0);
+	printf("Please input side of Polygon :");
+	textcolor(13,0);scanf("%f",&side);textcolor(15,0);
+	
+	area = 1.72*(side*side);
+	printf("\nArea of your Polygon is %.2f !",area);//calculate volume of polygon use[side]
+	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
+}
 int main(){
 	int shape; 
 	float side; 
@@ -322,6 +336,24 @@ int main(){
 				break;
 			}
 			break;
+			}
+		case 5:
+			{
+			int poly;
+			printf("\nYou input 5 : Polygon !");textcolor(9,0);textcolor(14,0);
+			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 1 to Pentagon \n");
+			textcolor(15,0);
+			printf("\nInput is : ");
+			scanf("%d",&poly);
+				switch (poly)
+				{
+					case 1:
+						{
+							polygon(side);
+							break;
+						}
+				}
+				break;
 			}
 		default :
 			textcolor(4,0);
