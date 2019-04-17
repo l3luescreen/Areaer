@@ -190,6 +190,37 @@ void polygon(float side)
 	printf("\nArea of your Polygon is %.2f !",area);//calculate volume of polygon use[side]
 	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
 }
+
+	//This is function that calculate a area of Hexagon
+void hexagon(float side)
+{
+	float area;
+	textcolor(9,0);printf("You choose Hexagon!\n");textcolor(15,0);
+	printf("The operation of Hexagon is :");
+	textcolor(3,0);printf("[Area = 2.598*(side*side)]\n\n");textcolor(15,0);
+	printf("Please input side of Hexagon :");
+	textcolor(13,0);scanf("%f",&side);textcolor(15,0);
+	
+	area = 2.598*(side*side);
+	printf("\nArea of your Hexagon is %.2f !",area);//calculate volume of hexagon use[side]
+	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
+}
+
+	//This is function that calculate a area of Octagon
+void octagon(float side)
+{
+	float area;
+	textcolor(9,0);printf("You choose Octagon!\n");textcolor(15,0);
+	printf("The operation of Octagon is :");
+	textcolor(3,0);printf("[Area = 2.598*(side*side)]\n\n");textcolor(15,0);
+	printf("Please input side of Octagon :");
+	textcolor(13,0);scanf("%f",&side);textcolor(15,0);
+	
+	area = 4.828*(side*side);
+	printf("\nArea of your Octagon is %.2f !",area);//calculate volume of Octagon use[side]
+	textcolor(10,0);printf("\n============== Process success! ==============");textcolor(15,0);
+}
+
 int main(){
 	int shape; 
 	float side; 
@@ -215,6 +246,7 @@ int main(){
 	textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 2:triangle \n");
 	textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 3:circle \n");
 	textcolor(12,0);printf("\n>>");textcolor(14,0);printf("4:3D Shape \n");
+	textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 5:Polygon \n");
 	textcolor(15,0);printf("\nInput is :");
 	textcolor(8,0);scanf("%d",&shape);textcolor(15,0);
 	
@@ -341,7 +373,9 @@ int main(){
 			{
 			int poly;
 			printf("\nYou input 5 : Polygon !");textcolor(9,0);textcolor(14,0);
-			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 1 to Pentagon \n");
+			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 1 : to Pentagon \n");
+			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 2 : to Hexagon \n");
+			textcolor(12,0);printf("\n>>");textcolor(14,0);printf("Input 3 : to octagon \n");
 			textcolor(15,0);
 			printf("\nInput is : ");
 			scanf("%d",&poly);
@@ -350,6 +384,16 @@ int main(){
 					case 1:
 						{
 							polygon(side);
+							break;
+						}
+					case 2:
+						{
+							hexagon(side);
+							break;
+						}
+					case 3:
+						{
+							octagon(side);
 							break;
 						}
 				}
